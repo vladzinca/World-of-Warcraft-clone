@@ -1,5 +1,5 @@
 public class Credentials {
-    String email, password;
+    private String email, password;
 
     public Credentials(String email, String password) {
         this.email = email;
