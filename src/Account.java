@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Account {
     Information information;
@@ -19,7 +20,7 @@ public class Account {
 
         public static class InformationBuilder {
             Credentials credentials;
-            ArrayList<String> favGames;
+            SortedArrayList<String> favGames;
             String name, country;
 
             public InformationBuilder(Credentials credentials, String name) {
@@ -27,7 +28,7 @@ public class Account {
                 this.name = name;
             }
 
-            public InformationBuilder favGames(ArrayList<String> favGames) {
+            public InformationBuilder favGames(SortedArrayList<String> favGames) {
                 this.favGames = favGames;
                 return this;
             }
@@ -37,8 +38,16 @@ public class Account {
                 return this;
             }
 
-            public Information build() {
+            public Information build() throws Exception {
+                Information information = new Information(this);
+                validate(information);
                 return new Information(this);
+            }
+
+            void validate(Information information) throws Exception {
+                if (information.credentials.getEmail().equals("") || information.credentials.getPassword().equals("") || information.name.equals("")) {
+                    throw new Exception("InformationIncompleteException");
+                }
             }
         }
     }
