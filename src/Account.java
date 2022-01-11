@@ -6,6 +6,12 @@ public class Account {
     ArrayList<String> characters;
     Integer gameCounter;
 
+    public Account(Information information, ArrayList<String> characters, Integer gameCounter) {
+        this.information = information;
+        this.characters = characters;
+        this.gameCounter = gameCounter;
+    }
+
     public static class Information {
         Credentials credentials;
         ArrayList<String> favGames;
@@ -38,15 +44,16 @@ public class Account {
                 return this;
             }
 
-            public Information build() throws Exception {
+            public Information build() {
                 Information information = new Information(this);
                 validate(information);
                 return new Information(this);
             }
 
-            void validate(Information information) throws Exception {
+            void validate(Information information) throws InformationIncompleteException {
                 if (information.credentials.getEmail().equals("") || information.credentials.getPassword().equals("") || information.name.equals("")) {
-                    throw new Exception("InformationIncompleteException");
+                    System.out.println("InformationIncompleteException");
+                    throw new InformationIncompleteException();
                 }
             }
         }
