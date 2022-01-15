@@ -10,8 +10,8 @@ public class Cell {
     boolean visited;
 
     public Cell(int ox, int oy, boolean visited) { // CellElement cellelement,
-        ox = ox;
-        oy = oy;
+        this.ox = ox;
+        this.oy = oy;
 //        this.cellelement = cellelement;
         this.visited = visited;
     }
