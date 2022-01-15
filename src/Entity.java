@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public abstract class Entity {
-    ArrayList<String> abilities;
+    ArrayList<Spell> spells;
     int health, maxHealth, mana, maxMana;
     boolean fire, ice, earth;
 
-    public Entity(ArrayList<String> abilities, int health, int maxHealth, int mana, int maxMana, boolean fire, boolean ice, boolean earth) {
-        this.abilities = abilities;
+    public Entity(ArrayList<Spell> spells, int health, int maxHealth, int mana, int maxMana, boolean fire, boolean ice, boolean earth) {
+        this.spells = spells;
         this.health = health;
         this.maxHealth = maxHealth;
         this.mana = mana;
@@ -30,7 +30,7 @@ public abstract class Entity {
             this.mana += additionalMana;
     }
 
-//    void useAbility(String ability, Entity enemy) {
+//    void useSpell(Spell spell, Entity enemy) {
 //
 //    }
 
