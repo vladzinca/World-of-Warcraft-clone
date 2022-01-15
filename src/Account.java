@@ -3,10 +3,10 @@ import java.util.Objects;
 
 public class Account {
     Information information;
-    ArrayList<String> characters;
+    ArrayList<Character> characters;
     Integer gameCounter;
 
-    public Account(Information information, ArrayList<String> characters, Integer gameCounter) {
+    public Account(Information information, ArrayList<Character> characters, Integer gameCounter) {
         this.information = information;
         this.characters = characters;
         this.gameCounter = gameCounter;

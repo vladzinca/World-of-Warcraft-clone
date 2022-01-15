@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Entity {
+public abstract class Entity implements Element {
     ArrayList<Spell> spells;
     int health, maxHealth, mana, maxMana;
     boolean fire, ice, earth;
@@ -26,4 +26,9 @@ public abstract class Entity {
     abstract void receiveDamage(int damage);
 
     abstract int getDamage();
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 }
