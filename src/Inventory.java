@@ -25,6 +25,6 @@ public class Inventory {
         for (Potion potion : potions) {
             weight += potion.getWeight();
         }
-        return weight;
+        return maxWeight - weight;
     }
 }

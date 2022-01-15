@@ -8,7 +8,14 @@ public abstract class Character extends Entity {
     int strength, charisma, dexterity;
 
     public Character(ArrayList<Spell> spells, int health, int maxHealth, int mana, int maxMana, boolean fire, boolean ice, boolean earth, String name, int ox, int oy, Inventory inventory, int currentExperience, int currentLevel, int strength, int charisma, int dexterity) {
-        super(spells, health, maxHealth, mana, maxMana, fire, ice, earth);
+        this.spells = spells;
+        this.health = health;
+        this.maxHealth = maxHealth;
+        this.mana = mana;
+        this.maxMana = maxMana;
+        this.fire = fire;
+        this.ice = ice;
+        this.earth = earth;
         this.name = name;
         this.ox = ox;
         this.oy = oy;
@@ -21,7 +28,7 @@ public abstract class Character extends Entity {
     }
 
     void buyPotion(Potion potion) {
-        if (inventory.moneyCount > potion.getPrice() && inventory.maxWeight > inventory.calculateWeight() + potion.getWeight()) {
+        if (inventory.moneyCount > potion.getPrice() && inventory.calculateWeight() > potion.getWeight()) {
             inventory.addPotion(potion);
         }
     }
