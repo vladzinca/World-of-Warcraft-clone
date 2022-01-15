@@ -11,10 +11,8 @@ public class Inventory {
     }
 
     void addPotion(Potion potion) {
-        if (moneyCount > potion.getPrice() && maxWeight > calculateWeight() + potion.getWeight()) {
-            potions.add(potion);
-            moneyCount -= potion.getPrice();
-        }
+        potions.add(potion);
+        moneyCount -= potion.getPrice();
     }
 
     Potion removePotion(Potion potion) {

@@ -30,11 +30,11 @@ public abstract class Entity {
             this.mana += additionalMana;
     }
 
-//    void useSpell(Spell spell, Entity enemy) {
-//
-//    }
+    void useSpell(Spell spell, Entity enemy) {
+        enemy.receiveDamage(this.getDamage());
+    }
 
-//    abstract void receiveDamage(int damage);
-//
-//    abstract void getDamage();
+    abstract void receiveDamage(int damage);
+
+    abstract int getDamage();
 }
