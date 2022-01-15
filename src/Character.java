@@ -28,8 +28,8 @@ public abstract class Character extends Entity {
     }
 
     void buyPotion(Potion potion) {
-        if (inventory.moneyCount > potion.getPrice() && inventory.calculateWeight() > potion.getWeight()) {
-            inventory.addPotion(potion);
+        if (inventory.moneyCount >= potion.getPrice() && inventory.calculateWeight() >= potion.getWeight()) {
+            this.inventory.addPotion(potion);
         }
     }
 }

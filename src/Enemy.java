@@ -7,13 +7,13 @@ public class Enemy extends Entity implements CellElement {
         for (int i = 0; i < spellCounter; i++) {
             int type = (int) (Math.random() * 3);
             if (type == 0) {
-                Spell spell = new Fire(4, 2);
+                Spell spell = new Fire();
                 spells.add(spell);
             } else if (type == 1) {
-                Spell spell = new Earth(10, 6);
+                Spell spell = new Earth();
                 spells.add(spell);
             } else {
-                Spell spell = new Ice(18, 12);
+                Spell spell = new Ice();
                 spells.add(spell);
             }
         }
@@ -49,10 +49,12 @@ public class Enemy extends Entity implements CellElement {
         int chance = (int) (Math.random() * 2);
         if (chance == 1)
             health -= damage;
+        if (health < 0)
+            health = 0;
     }
 
     @Override
-    int getDamage() {
+    int getDamage(Spell spell) {
         int maxDamage = 0, maxSpellIndex = -1;
         for (int i = 0; i < spells.size(); i++)
             if (spells.get(i).damage > maxDamage && spells.get(i).mana < this.mana) {

@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 public class AccountTest {
     public static void main(String[] args) {
-        System.out.println("===================");
-        System.out.println("Testare Information\n===================");
+        System.out.println("===================\nTestare Information\n===================");
         Credentials credentials = new Credentials("vlad.zinca@stud.acs.upb.ro", "i_laik_OOP");
         SortedArrayList<String> favGames = new SortedArrayList<>();
         favGames.insert("The Witcher 3: Wild Hunt");

@@ -7,11 +7,17 @@ public class Mage extends Character {
 
     @Override
     void receiveDamage(int damage) {
-        // implementeaza
+        if (damage == 18)
+            health -= damage / 2;
+        else
+            health -= damage;
     }
 
     @Override
-    int getDamage() {
-        return 0; // implementeaza
+    int getDamage(Spell spell) {
+        if (spell.damage == 18)
+            return 2 * spell.damage * charisma / (50 * currentLevel);
+        else
+            return spell.damage * charisma / (50 * currentLevel);
     }
 }

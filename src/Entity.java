@@ -20,12 +20,13 @@ public abstract class Entity implements Element {
     }
 
     void useSpell(Spell spell, Entity enemy) {
-        enemy.receiveDamage(this.getDamage());
+        enemy.receiveDamage(this.getDamage(spell));
+        this.mana -= spell.mana;
     }
 
     abstract void receiveDamage(int damage);
 
-    abstract int getDamage();
+    abstract int getDamage(Spell spell);
 
     @Override
     public void accept(Visitor visitor) {
