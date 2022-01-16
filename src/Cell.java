@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-
 public class Cell {
     int ox, oy;
 
-    enum cellType {
+    enum Enum {
         EMPTY,
         ENEMY,
         SHOP,
@@ -19,19 +17,19 @@ public class Cell {
         Grid grid = Grid.generateMap(5, 5);
         switch (grid.get(ox).get(oy)) {
             case "S" -> {
-                cellType celltype = cellType.SHOP;
+                Enum celltype = Enum.SHOP;
                 break;
             }
             case "E" -> {
-                cellType celltype = cellType.ENEMY;
+                Enum celltype = Enum.ENEMY;
                 break;
             }
             case "F" -> {
-                cellType celltype = cellType.FINISH;
+                Enum celltype = Enum.FINISH;
                 break;
             }
             default -> {
-                cellType celltype = cellType.EMPTY;
+                Enum celltype = Enum.EMPTY;
                 break;
             }
         }

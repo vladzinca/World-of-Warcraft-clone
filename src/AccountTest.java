@@ -15,13 +15,14 @@ public class AccountTest {
                     .favGames(favGames)
                     .country("Romania")
                     .build();
-            System.out.println("Credentialele jucatorului: " + information.credentials.getEmail() + ", " + information.credentials.getPassword());
+            System.out.println("Credentialele jucatorului: " + information.credentials.getEmail() + ", "
+                    + information.credentials.getPassword());
             System.out.println("Jocurile preferate ale jucatorului: " + information.favGames);
             System.out.println("Numele jucatorului: " + information.name);
             System.out.println("Tara din care provine jucatorul: " + information.country);
             System.out.println("===================");
         } catch (InformationIncompleteException e) {
-            System.out.println("Please provide name and credentials\n");
+            System.out.println("Please provide name and credentials.\n");
         }
         System.out.println("Daca introducem un nume:\n");
         try {
@@ -29,7 +30,8 @@ public class AccountTest {
                     .favGames(favGames)
                     .country("Romania")
                     .build();
-            System.out.println("Credentialele jucatorului: " + information.credentials.getEmail() + ", " + information.credentials.getPassword());
+            System.out.println("Credentialele jucatorului: " + information.credentials.getEmail() + ", "
+                    + information.credentials.getPassword());
             System.out.println("Jocurile preferate ale jucatorului: " + information.favGames);
             System.out.println("Numele jucatorului: " + information.name);
             System.out.println("Tara din care provine jucatorul: " + information.country);
@@ -52,7 +54,8 @@ public class AccountTest {
         characters.add(character3);
         Integer gameCounter = 61;
         Account account = new Account(information, characters, gameCounter);
-        System.out.println("Credentialele jucatorului: " + account.information.credentials.getEmail() + ", " + account.information.credentials.getPassword());
+        System.out.println("Credentialele jucatorului: " + account.information.credentials.getEmail() + ", "
+                + account.information.credentials.getPassword());
         System.out.println("Personajele contului: ");
         for (int i = 0; i < account.characters.size(); i++)
             System.out.println(account.characters.get(i).name);

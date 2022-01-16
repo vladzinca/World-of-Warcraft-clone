@@ -2,7 +2,8 @@ public class ManaPotionTest {
     public static void main(String[] args) {
         System.out.println("===================\nTestare ManaPotion\n===================");
         Potion potion1 = new ManaPotion(10, 15, 10);
-        System.out.println("Am instantiat o potiune cu pretul " + potion1.getPrice() + ", valoarea de regenerare " + potion1.getRegenValue() + " si care cantareste " + potion1.getWeight());
+        System.out.println("Am instantiat o potiune cu pretul " + potion1.getPrice() + ", valoarea de regenerare " +
+                potion1.getRegenValue() + " si care cantareste " + potion1.getWeight());
         Character warrior = CharacterFactory.makeCharacter(CharacterType.WARRIOR);
         System.out.println("Am instantiat un caracter cu mana " + warrior.mana + " si mana maxima " + warrior.maxMana);
         warrior.mana = 118;

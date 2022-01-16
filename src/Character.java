@@ -7,7 +7,9 @@ public abstract class Character extends Entity {
     int currentExperience, currentLevel;
     int strength, charisma, dexterity;
 
-    public Character(ArrayList<Spell> spells, int health, int maxHealth, int mana, int maxMana, boolean fire, boolean ice, boolean earth, String name, int ox, int oy, Inventory inventory, int currentExperience, int currentLevel, int strength, int charisma, int dexterity) {
+    public Character(ArrayList<Spell> spells, int health, int maxHealth, int mana, int maxMana, boolean fire,
+                     boolean ice, boolean earth, String name, int ox, int oy, Inventory inventory,
+                     int currentExperience, int currentLevel, int strength, int charisma, int dexterity) {
         this.spells = spells;
         this.health = health;
         this.maxHealth = maxHealth;

@@ -28,5 +28,7 @@ public class HealthPotion implements Potion {
     }
 
     @Override
-    public String getType() { return "HealthPotion"; }
+    public String getType() {
+        return "HealthPotion";
+    }
 }

@@ -28,5 +28,7 @@ public class ManaPotion implements Potion {
     }
 
     @Override
-    public String getType() { return "ManaPotion"; }
+    public String getType() {
+        return "ManaPotion";
+    }
 }

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Account {
     Information information;
@@ -51,7 +50,8 @@ public class Account {
             }
 
             void validate(Information information) throws InformationIncompleteException {
-                if (information.credentials.getEmail().equals("") || information.credentials.getPassword().equals("") || information.name.equals("")) {
+                if (information.credentials.getEmail().equals("") || information.credentials.getPassword().equals("")
+                        || information.name.equals("")) {
                     System.out.println("InformationIncompleteException");
                     throw new InformationIncompleteException();
                 }

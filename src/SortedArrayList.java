@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class SortedArrayList<T> extends ArrayList<T> {
     public void insert(T favGame) {

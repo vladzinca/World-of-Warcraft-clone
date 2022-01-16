@@ -12,16 +12,20 @@ public class GridTest {
             System.out.print("\n");
         }
         grid.currentCell = new Cell(0, 0, true);
-        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy + "), daca mergem la nord ajungem la: ");
+        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy +
+                "), daca mergem la nord ajungem la: ");
         grid.goNorth();
         System.out.println("(" + grid.currentCell.ox + ", " + grid.currentCell.oy + ")");
-        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy + "), daca mergem la sud ajungem la: ");
+        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy +
+                "), daca mergem la sud ajungem la: ");
         grid.goSouth();
         System.out.println("(" + grid.currentCell.ox + ", " + grid.currentCell.oy + ")");
-        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy + "), daca mergem la vest ajungem la: ");
+        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy +
+                "), daca mergem la vest ajungem la: ");
         grid.goWest();
         System.out.println("(" + grid.currentCell.ox + ", " + grid.currentCell.oy + ")");
-        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy + "), daca mergem la est ajungem la: ");
+        System.out.println("La pozitia (" + grid.currentCell.ox + ", " + grid.currentCell.oy +
+                "), daca mergem la est ajungem la: ");
         grid.goEast();
         System.out.println("(" + grid.currentCell.ox + ", " + grid.currentCell.oy + ")");
     }
