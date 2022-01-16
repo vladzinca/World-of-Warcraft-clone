@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Enemy extends Entity implements CellElement {
     public Enemy() {
         ArrayList<Spell> spells = new ArrayList<>();
-        int spellCounter = (int) (Math.random() * 2) + 2;
+        int spellCounter = (int) (Math.random() * 3) + 2;
         for (int i = 0; i < spellCounter; i++) {
             int type = (int) (Math.random() * 3);
             if (type == 0) {
@@ -41,27 +41,34 @@ public class Enemy extends Entity implements CellElement {
 
     @Override
     public String toCharacter() {
-        return null; // implementeaza
+        return "E";
     }
 
     @Override
     void receiveDamage(int damage) {
         int chance = (int) (Math.random() * 2);
-        if (chance == 1)
-            health -= damage;
+        if (chance == 1) {
+            if ((damage == 4 && fire) || (damage == 10 && earth) || (damage == 18 && ice))
+                health -= damage / 2;
+            else
+                health -= damage;
+        }
         if (health < 0)
             health = 0;
     }
 
     @Override
     int getDamage(Spell spell) {
+        return spell.damage;
+    }
+
+    Spell getBestSpell() {
         int maxDamage = 0, maxSpellIndex = -1;
         for (int i = 0; i < spells.size(); i++)
             if (spells.get(i).damage > maxDamage && spells.get(i).mana < this.mana) {
                 maxDamage = spells.get(i).damage;
                 maxSpellIndex = i;
             }
-        spells.remove(maxSpellIndex);
-        return maxDamage;
+        return spells.remove(maxSpellIndex);
     }
 }

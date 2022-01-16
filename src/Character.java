@@ -22,9 +22,9 @@ public abstract class Character extends Entity {
         this.inventory = inventory;
         this.currentExperience = currentExperience;
         this.currentLevel = currentLevel;
-        this.strength = strength; // implementeaza
-        this.charisma = charisma; // implementeaza
-        this.dexterity = dexterity; // implementeaza
+        this.strength = strength;
+        this.charisma = charisma;
+        this.dexterity = dexterity;
     }
 
     void buyPotion(Potion potion) {

@@ -26,4 +26,7 @@ public class HealthPotion implements Potion {
     public int getWeight() {
         return weight;
     }
+
+    @Override
+    public String getType() { return "HealthPotion"; }
 }

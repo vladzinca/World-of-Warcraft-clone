@@ -6,4 +6,6 @@ interface Potion {
     int getRegenValue();
 
     int getWeight();
+
+    String getType();
 }

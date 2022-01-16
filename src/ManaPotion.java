@@ -26,4 +26,7 @@ public class ManaPotion implements Potion {
     public int getWeight() {
         return weight;
     }
+
+    @Override
+    public String getType() { return "ManaPotion"; }
 }
